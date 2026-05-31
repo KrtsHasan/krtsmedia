@@ -41,6 +41,14 @@
 
         #particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; }
 
+        /* --- Navbar Glass --- */
+        .glass-nav {
+            background: rgba(3, 3, 3, 0.8); backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255,255,255,0.05); padding: 15px 0;
+        }
+        .nav-link { color: rgba(255,255,255,0.7) !important; font-weight: 600; font-size: 0.9rem; letter-spacing: 1px; transition: 0.3s; }
+        .nav-link:hover { color: var(--secondary) !important; }
+
         /* --- Section Titles --- */
         .section-tag { color: var(--secondary); font-weight: 800; letter-spacing: 3px; text-transform: uppercase; font-size: 0.8rem; }
 
@@ -57,6 +65,9 @@
         }
         .elite-card:hover::before { opacity: 1; }
         .elite-card:hover { border-color: var(--secondary); transform: translateY(-15px); }
+
+        .star-card { border: 1px solid var(--primary); box-shadow: 0 0 30px rgba(123, 44, 191, 0.15); }
+        .star-card:hover { box-shadow: 0 0 50px rgba(123, 44, 191, 0.4); }
 
         /* --- Pricing Tiers --- */
         .price-card {
@@ -95,6 +106,7 @@
     <div id="cursor-follower"></div>
     <div id="particles-js"></div>
 
+    <!-- PRELOADER -->
     <div id="preloader" style="position: fixed; top:0; left:0; width:100%; height:100%; background:#000; z-index:999999; display:flex; justify-content:center; align-items:center; flex-direction:column;">
         <div class="glitch-text h2 fw-bold" style="letter-spacing: 10px;">KRTS MEDIA</div>
         <div class="progress mt-4" style="width: 200px; height: 2px; background: rgba(255,255,255,0.1);">
@@ -102,22 +114,81 @@
         </div>
     </div>
 
-    <section class="min-vh-100 d-flex align-items-center">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top glass-nav">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-white" href="#" style="letter-spacing: 2px;">KRTS<span style="color: var(--secondary);">MEDIA</span></a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fas fa-bars text-white"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-2">
+                    <li class="nav-item"><a class="nav-link" href="#about">Hakkımızda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#process">Süreç</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Vitrin</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pricing">Planlar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">İletişim</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="min-vh-100 d-flex align-items-center" style="padding-top: 80px;">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-8" data-aos="fade-right">
                     <span class="section-tag mb-3 d-block">Elite Software Studio</span>
                     <h1 class="display-1 fw-extrabold mb-4" style="line-height: 0.9;">Dijital <br><span style="color: var(--secondary);">Ekosisteminizi</span><br>İnşa Edin.</h1>
                     <p class="lead text-muted mb-5 w-75">Sadece kod yazmıyoruz. Veri, estetik ve teknolojiyi birleştirerek işletmenizi global bir markaya dönüştürüyoruz.</p>
-                    <div class="d-flex gap-4 align-items-center">
+                    <div class="d-flex gap-4 align-items-center flex-wrap">
                         <a href="#contact" class="btn btn-supreme">Projeyi Başlat</a>
-                        <a href="#process" class="text-white text-decoration-none small fw-bold">Süreç Nasıl İşler? <i class="fas fa-arrow-right ms-2"></i></a>
+                        <a href="#about" class="text-white text-decoration-none small fw-bold">Biz Kimiz? <i class="fas fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ================= ABOUT & FOUNDER (HAKKIMIZDA) SECTION ================= -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-7" data-aos="fade-right">
+                    <span class="section-tag mb-3 d-block">Hakkımızda & Vizyonumuz</span>
+                    <h2 class="display-5 fw-bold mb-4">Sadece Web Sitesi Değil, <br>Güçlü Sistemler Kuruyoruz.</h2>
+                    <p class="text-muted lead mb-4">
+                        KRTS Media olarak Antalya'dan dünyaya açılan bir teknoloji operasyonuyuz. İşletmelerin dijitalleşme sürecini standart şablonlarla değil, analitik mühendislik disipliniyle ele alıyoruz.
+                    </p>
+                    <p class="text-muted mb-4">
+                        Kurucumuz ve Sistem Mimarımız <strong>Hasan Karataş</strong> liderliğinde; Akdeniz Üniversitesi'nin akademik temelini sahadaki modern teknolojilerle harmanlıyoruz. C#, Python, React Native, Kotlin ve ASP.NET Core MVC ekosistemlerindeki derin uzmanlığımızla, fikrinizi alıyor ve tam otomasyon sağlayan global bir platforma dönüştürüyoruz.
+                    </p>
+                    <div class="d-flex gap-2 flex-wrap mt-2">
+                        <span class="badge rounded-pill border border-secondary px-3 py-2 text-white" style="background: rgba(157, 78, 221, 0.1);">C# / .NET Core</span>
+                        <span class="badge rounded-pill border border-secondary px-3 py-2 text-white" style="background: rgba(157, 78, 221, 0.1);">Python</span>
+                        <span class="badge rounded-pill border border-secondary px-3 py-2 text-white" style="background: rgba(157, 78, 221, 0.1);">React Native & Kotlin</span>
+                        <span class="badge rounded-pill border border-secondary px-3 py-2 text-white" style="background: rgba(157, 78, 221, 0.1);">Sistem Mimarisi</span>
+                    </div>
+                </div>
+                <div class="col-lg-5" data-aos="fade-left">
+                    <div class="elite-card text-center p-5">
+                        <div class="mb-4">
+                            <div style="width: 130px; height: 130px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: white; font-weight: 800; box-shadow: var(--neon-shadow);">
+                                HK
+                            </div>
+                        </div>
+                        <h4 class="fw-bold text-white mb-1">Hasan Karataş</h4>
+                        <p class="text-secondary fw-bold mb-3" style="letter-spacing: 2px; font-size: 0.8rem;">KURUCU & YAZILIM MİMARI</p>
+                        <p class="text-muted small">
+                            "Bir yazılım sadece çalışmamalı; yaşamalı, nefes almalı ve işletmeyle birlikte büyümelidir."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS SECTION -->
     <section id="process" class="py-5">
         <div class="container">
             <div class="row">
@@ -134,7 +205,7 @@
                     </div>
                     <div class="roadmap-item">
                         <h5 class="fw-bold">03. Akıllı Kodlama</h5>
-                        <p class="text-muted small">Python, React ve modern altyapılarla jet hızında, güvenli sistemler inşa ediyoruz.</p>
+                        <p class="text-muted small">C#, Python ve React ekosistemleriyle jet hızında, güvenli sistemler inşa ediyoruz.</p>
                     </div>
                     <div class="roadmap-item" style="border:none">
                         <h5 class="fw-bold">04. Ölçekleme & Destek</h5>
@@ -154,6 +225,58 @@
         </div>
     </section>
 
+    <!-- ================= PORTFOLIO (VİTRİN) SECTION ================= -->
+    <section id="portfolio" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="section-tag">Vitrin</span>
+                <h2 class="display-4 fw-bold">Geliştirdiğimiz <br><span class="text-secondary">Ekosistemler</span></h2>
+            </div>
+            <div class="row g-4">
+                
+                <!-- COMPAI (AMİRAL GEMİSİ) -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="50">
+                    <div class="elite-card star-card p-5">
+                        <span class="badge bg-primary mb-3 px-3 py-2">VİTRİN PROJEMİZ</span>
+                        <div class="mb-4 text-white"><i class="fas fa-layer-group fa-3x"></i></div>
+                        <h3 class="fw-bold text-white mb-3">COMPAI</h3>
+                        <p class="text-muted small mb-0">KRTS Media ekosisteminin en vizyoner ve kapsamlı projesi. İşletmelerin ve kullanıcıların dijital altyapılarını yapay zeka ve modern mimarilerle destekleyerek tek bir merkezden eşsiz bir deneyimle yönetmelerini sağlayan üst düzey teknoloji harikası.</p>
+                    </div>
+                </div>
+
+                <!-- KiraGo -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="elite-card p-5">
+                        <span class="badge bg-warning text-dark mb-3 px-3 py-2"><i class="fas fa-spinner fa-spin"></i> GELİŞTİRME AŞAMASINDA</span>
+                        <div class="mb-4 text-secondary"><i class="fas fa-map-marked-alt fa-3x"></i></div>
+                        <h3 class="fw-bold text-white mb-3">KiraGo</h3>
+                        <p class="text-muted small mb-0">İnsanların anlık eşya ve ekipman ihtiyaçlarını satın almak yerine, en yakınlarındaki kullanıcılardan kiralayabilecekleri, konum tabanlı yenilikçi bir paylaşım ekonomisi ve sosyal ağ platformu.</p>
+                    </div>
+                </div>
+
+                <!-- Car Bath -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="elite-card p-5">
+                        <div class="mb-4 text-info"><i class="fas fa-shower fa-3x"></i></div>
+                        <h3 class="fw-bold text-white mb-3">Car Bath</h3>
+                        <p class="text-muted small mb-0">Oto yıkama merkezleri ve araç bakım istasyonları için özel olarak tasarlanmış randevu, müşteri takip ve operasyonel süreç yönetimi otomasyonu.</p>
+                    </div>
+                </div>
+
+                <!-- krts-booking -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="elite-card p-5">
+                        <div class="mb-4 text-success"><i class="fas fa-calendar-check fa-3x"></i></div>
+                        <h3 class="fw-bold text-white mb-3">krts-booking</h3>
+                        <p class="text-muted small mb-0">Farklı sektörlerdeki ticari işletmeler için yüksek performanslı, esnek yapıya sahip ve tamamen ölçeklenebilir genel rezervasyon ve zaman yönetimi altyapısı.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
     <section id="pricing" class="py-5 bg-black bg-opacity-20">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
@@ -207,6 +330,7 @@
         </div>
     </section>
 
+    <!-- FOOTER / CONTACT -->
     <footer id="contact" class="py-5 mt-5">
         <div class="container text-center">
             <h2 class="display-5 fw-bold mb-5" data-aos="fade-up">Sıradaki Başarı <br>Hikayesi Sizin Olsun.</h2>
