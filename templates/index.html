@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>KRTS Media | Global Software </title>
+    <title>KRTS Media | Global Software</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -52,17 +52,26 @@
         /* --- Section Titles --- */
         .section-tag { color: var(--secondary); font-weight: 800; letter-spacing: 3px; text-transform: uppercase; font-size: 0.8rem; }
 
-        /* --- Glass Card 3.0 --- */
+        /* --- Glass Card 3.0 (Link Bug Fixed) --- */
         .elite-card {
             background: var(--glass); border: 1px solid rgba(255,255,255,0.05);
             border-radius: 35px; padding: 50px; transition: 0.5s; position: relative; overflow: hidden;
             backdrop-filter: blur(20px); height: 100%;
         }
+        
         .elite-card::before {
             content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
             background: radial-gradient(circle, rgba(157, 78, 221, 0.1) 0%, transparent 70%);
             opacity: 0; transition: 0.5s;
+            pointer-events: none; 
+            z-index: 0;
         }
+
+        .elite-card > * {
+            position: relative;
+            z-index: 1; 
+        }
+
         .elite-card:hover::before { opacity: 1; }
         .elite-card:hover { border-color: var(--secondary); transform: translateY(-15px); }
 
@@ -170,6 +179,7 @@
                         <span class="badge rounded-pill border border-secondary px-3 py-2 text-white" style="background: rgba(157, 78, 221, 0.1);">Sistem Mimarisi</span>
                     </div>
                 </div>
+                
                 <div class="col-lg-5" data-aos="fade-left">
                     <div class="elite-card text-center p-5">
                         <div class="mb-4">
@@ -178,12 +188,22 @@
                             </div>
                         </div>
                         <h4 class="fw-bold text-white mb-1">Hasan Karataş</h4>
-                        <p class="text-secondary fw-bold mb-3" style="letter-spacing: 2px; font-size: 0.8rem;">KURUCU & YAZILIM MİMARI</p>
-                        <p class="text-muted small">
+                        <p class="text-secondary fw-bold mb-3" style="letter-spacing: 2px; font-size: 0.8rem;">KURUCU & SİSTEM MİMARI</p>
+                        <p class="text-muted small mb-4">
                             "Bir yazılım sadece çalışmamalı; yaşamalı, nefes almalı ve işletmeyle birlikte büyümelidir."
                         </p>
+                        
+                        <!-- SOSYAL MEDYA VE CV BUTONLARI -->
+                        <div class="d-flex justify-content-center gap-3 mb-4">
+                            <a href="https://github.com/KrtsHasan" target="_blank" class="text-white fs-4" style="transition: 0.3s;" onmouseover="this.style.color='var(--secondary)'" onmouseout="this.style.color='white'"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/hasan-karatas-29b96832a/" target="_blank" class="text-white fs-4" style="transition: 0.3s;" onmouseover="this.style.color='var(--secondary)'" onmouseout="this.style.color='white'"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                        <a href="https://drive.google.com/file/d/1kI2bzXSojrGkThcUjqAg-ANxi4fHL5KM/view?usp=sharing" target="_blank" class="btn btn-outline-light rounded-pill btn-sm px-4 py-2" style="border-width: 2px;">
+                            <i class="fas fa-file-pdf me-2 text-danger"></i>Özgeçmişimi İncele
+                        </a>
                     </div>
                 </div>
+                
             </div>
         </div>
     </section>
@@ -226,7 +246,6 @@
     </section>
 
     <!-- ================= PORTFOLIO (VİTRİN) SECTION ================= -->
-   <!-- ================= PORTFOLIO (VİTRİN) SECTION ================= -->
     <section id="portfolio" class="py-5">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
@@ -338,11 +357,24 @@
     </section>
 
     <!-- FOOTER / CONTACT -->
-    <footer id="contact" class="py-5 mt-5">
+    <footer id="contact" class="py-5 mt-5" style="border-top: 1px solid rgba(255,255,255,0.05); background: rgba(0,0,0,0.3);">
         <div class="container text-center">
             <h2 class="display-5 fw-bold mb-5" data-aos="fade-up">Sıradaki Başarı <br>Hikayesi Sizin Olsun.</h2>
-            <a href="https://wa.me/905421565602" class="btn btn-supreme px-5 mb-5">Ücretsiz Analiz Başlat</a>
-            <div class="opacity-50 small mt-5">
+            
+            <div class="d-flex justify-content-center gap-3 flex-wrap mb-5" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://wa.me/905421565602" class="btn btn-supreme px-5 py-3">Ücretsiz Analiz Başlat</a>
+                <a href="https://drive.google.com/file/d/1kI2bzXSojrGkThcUjqAg-ANxi4fHL5KM/view?usp=sharing" target="_blank" class="btn btn-outline-light px-5 py-3 rounded-pill d-flex align-items-center" style="border-width: 2px;">
+                    <i class="fas fa-download me-2"></i> CV İndir
+                </a>
+            </div>
+
+            <!-- FOOTER SOSYAL BAĞLANTILAR -->
+            <div class="d-flex justify-content-center gap-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://github.com/KrtsHasan" target="_blank" class="text-muted fs-3" style="transition: 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#6c757d'"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/hasan-karatas-29b96832a/" target="_blank" class="text-muted fs-3" style="transition: 0.3s;" onmouseover="this.style.color='#0077b5'" onmouseout="this.style.color='#6c757d'"><i class="fab fa-linkedin"></i></a>
+            </div>
+
+            <div class="opacity-50 small mt-4">
                 &copy; 2026 KRTS Media Group. Antalya'dan Global Teknolojiye.
             </div>
         </div>
